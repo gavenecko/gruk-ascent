@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:,">
+<title>GRUK: Ascent of Knowledge</title>
+<style>
+html,body{margin:0;padding:0;background:#000;height:100%;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+canvas{image-rendering:pixelated;image-rendering:crisp-edges;display:block;background:#000}
+#menu{position:fixed;left:50%;top:62%;transform:translateX(-50%);display:flex;gap:12px;flex-wrap:wrap;justify-content:center;z-index:5}
+#menu button{font:bold 16px monospace;padding:10px 18px;background:#3a2212;color:#ffe9b0;border:3px solid #ffcf6a;border-radius:4px;cursor:pointer;min-width:150px}
+#menu button:active{background:#6e3a16}
+#touch{position:fixed;inset:0;pointer-events:none;z-index:4;display:none}
+#touch.on{display:block}
+.b{position:absolute;pointer-events:auto;display:flex;align-items:center;justify-content:center;font:bold 15px monospace;color:rgba(255,240,210,.9);background:rgba(40,25,15,.38);border:2px solid rgba(255,220,160,.45);border-radius:50%;box-sizing:border-box}
+.b.on{background:rgba(255,200,120,.45)}
+.b.sq{border-radius:10px}
+.b.dim{opacity:.3}
+#rot{position:fixed;inset:0;background:#000;color:#ffe9b0;font:bold 18px monospace;display:none;align-items:center;justify-content:center;text-align:center;z-index:10;padding:20px}
+@media (orientation:portrait) and (pointer:coarse){#rot{display:flex}}
+</style></head><body>
+<div id="wrap"><canvas id="c" width="480" height="272"></canvas></div>
+<div id="menu"></div>
+<div id="touch">
+  <div class="b sq" data-k="left,up" style="left:2vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8598;</div>
+  <div class="b sq" data-k="up" style="left:12vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin">&#9650;</div>
+  <div class="b sq" data-k="right,up" style="left:22vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8599;</div>
+  <div class="b sq" data-k="left" style="left:2vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9664;</div>
+  <div class="b sq" data-k="right" style="left:22vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9654;</div>
+  <div class="b sq" data-k="left,down" style="left:2vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8601;</div>
+  <div class="b sq" data-k="down" style="left:12vmin;bottom:4vmin;width:10vmin;height:10vmin">&#9660;</div>
+  <div class="b sq" data-k="right,down" style="left:22vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8600;</div>
+  <div class="b" data-k="jump" style="right:3vmin;bottom:4vmin;width:17vmin;height:17vmin">JUMP</div>
+  <div class="b" data-k="attack" style="right:21vmin;bottom:6vmin;width:14vmin;height:14vmin">CLUB</div>
+  <div class="b" id="bFire" data-k="fire" style="right:6vmin;bottom:23vmin;width:12vmin;height:12vmin">FIRE</div>
+  <div class="b" id="bSpear" data-k="spear" style="right:20vmin;bottom:22vmin;width:12vmin;height:12vmin">SPEAR</div>
+  <div class="b sq" data-k="pause" style="left:50%;top:1vmin;transform:translateX(-50%);width:11vmin;height:8vmin">II</div>
+</div>
+<div id="rot">Turn your phone sideways (landscape) to play GRUK.</div>
+<script src="game.js"></script>
+</body></html>
