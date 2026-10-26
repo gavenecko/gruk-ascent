@@ -16,6 +16,9 @@ canvas{image-rendering:pixelated;image-rendering:crisp-edges;display:block;backg
 #menu button:active{background:#6e3a16}
 #touch{position:fixed;inset:0;pointer-events:none;z-index:4;display:none}
 #touch.on{display:block}
+#touch.joy .sq.dp{display:none}
+#joyBase{position:absolute;display:none;width:26vmin;height:26vmin;margin:-13vmin 0 0 -13vmin;border-radius:50%;background:rgba(40,25,15,.25);border:2px solid rgba(255,220,160,.4);box-sizing:border-box;pointer-events:none}
+#joyKnob{position:absolute;left:50%;top:50%;width:12vmin;height:12vmin;margin:-6vmin 0 0 -6vmin;border-radius:50%;background:rgba(255,210,140,.45);border:2px solid rgba(255,235,190,.7);box-sizing:border-box}
 .b{position:absolute;pointer-events:auto;display:flex;align-items:center;justify-content:center;font:bold 15px monospace;color:rgba(255,240,210,.9);background:rgba(40,25,15,.38);border:2px solid rgba(255,220,160,.45);border-radius:50%;box-sizing:border-box}
 .b.on{background:rgba(255,200,120,.45)}
 .b.sq{border-radius:10px}
@@ -26,20 +29,21 @@ canvas{image-rendering:pixelated;image-rendering:crisp-edges;display:block;backg
 <div id="wrap"><canvas id="c" width="480" height="272"></canvas></div>
 <div id="menu"></div>
 <div id="touch">
-  <div class="b sq" data-k="left,up" style="left:2vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8598;</div>
-  <div class="b sq" data-k="up" style="left:12vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin">&#9650;</div>
-  <div class="b sq" data-k="right,up" style="left:22vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8599;</div>
-  <div class="b sq" data-k="left" style="left:2vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9664;</div>
-  <div class="b sq" data-k="right" style="left:22vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9654;</div>
-  <div class="b sq" data-k="left,down" style="left:2vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8601;</div>
-  <div class="b sq" data-k="down" style="left:12vmin;bottom:4vmin;width:10vmin;height:10vmin">&#9660;</div>
-  <div class="b sq" data-k="right,down" style="left:22vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8600;</div>
-  <div class="b" data-k="jump" style="right:3vmin;bottom:4vmin;width:17vmin;height:17vmin">JUMP</div>
-  <div class="b" data-k="attack" style="right:21vmin;bottom:6vmin;width:14vmin;height:14vmin">CLUB</div>
-  <div class="b" id="bFire" data-k="fire" style="right:6vmin;bottom:23vmin;width:12vmin;height:12vmin">FIRE</div>
-  <div class="b" id="bSpear" data-k="spear" style="right:20vmin;bottom:22vmin;width:12vmin;height:12vmin">SPEAR</div>
-  <div class="b" id="bRoll" data-k="roll" style="right:36vmin;bottom:3vmin;width:11vmin;height:11vmin;font-size:12px">ROLL</div>
-  <div class="b" id="bHook" data-k="hook" style="right:34vmin;bottom:20vmin;width:11vmin;height:11vmin;font-size:12px">HOOK</div>
+  <div id="joyBase"><div id="joyKnob"></div></div>
+  <div class="b sq dp" data-k="left,up" style="left:2vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8598;</div>
+  <div class="b sq dp" data-k="up" style="left:12vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin">&#9650;</div>
+  <div class="b sq dp" data-k="right,up" style="left:22vmin;bottom:calc(4vmin + 20vmin);width:10vmin;height:10vmin;opacity:.5">&#8599;</div>
+  <div class="b sq dp" data-k="left" style="left:2vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9664;</div>
+  <div class="b sq dp" data-k="right" style="left:22vmin;bottom:calc(4vmin + 10vmin);width:10vmin;height:10vmin">&#9654;</div>
+  <div class="b sq dp" data-k="left,down" style="left:2vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8601;</div>
+  <div class="b sq dp" data-k="down" style="left:12vmin;bottom:4vmin;width:10vmin;height:10vmin">&#9660;</div>
+  <div class="b sq dp" data-k="right,down" style="left:22vmin;bottom:4vmin;width:10vmin;height:10vmin;opacity:.5">&#8600;</div>
+  <div class="b" data-k="jump" style="right:3vmin;bottom:4vmin;width:20vmin;height:20vmin">JUMP</div>
+  <div class="b" data-k="attack" style="right:25vmin;bottom:4vmin;width:16vmin;height:16vmin">CLUB</div>
+  <div class="b" id="bFire" data-k="fire" style="right:4vmin;bottom:27vmin;width:14vmin;height:14vmin">FIRE</div>
+  <div class="b" id="bSpear" data-k="spear" style="right:21vmin;bottom:23vmin;width:14vmin;height:14vmin">SPEAR</div>
+  <div class="b" id="bRoll" data-k="roll" style="right:44vmin;bottom:3vmin;width:13vmin;height:13vmin;font-size:13px">ROLL</div>
+  <div class="b" id="bHook" data-k="hook" style="right:38vmin;bottom:22vmin;width:13vmin;height:13vmin;font-size:13px">HOOK</div>
   <div class="b sq" id="bMute" data-k="mute" style="left:calc(50% + 8vmin);top:1vmin;width:8vmin;height:8vmin">&#9834;</div>
   <div class="b sq" data-k="pause" style="left:50%;top:1vmin;transform:translateX(-50%);width:11vmin;height:8vmin">II</div>
 </div>

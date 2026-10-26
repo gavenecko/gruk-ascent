@@ -150,8 +150,22 @@ addEventListener('keydown',e=>{const k=KMAP[e.code];if(k){kb[k]=1;latch[k]=1;e.p
 addEventListener('keyup',e=>{const k=KMAP[e.code];if(k){kb[k]=0;e.preventDefault();}});
 addEventListener('blur',()=>{for(const k in kb)kb[k]=0;});
 const touchEl=document.getElementById('touch');
+let ctrlMode='joy';try{ctrlMode=localStorage.getItem('gruk_ctrl')||'joy';}catch(e){}
+const joy={id:null,bx:0,by:0},jB=document.getElementById('joyBase'),jK=document.getElementById('joyKnob');
+function applyCtrl(){touchEl.classList.toggle('joy',ctrlMode==='joy');}applyCtrl();
+function joyDirs(t,n){const R=Math.min(innerWidth,innerHeight)*.13;let dx=t.clientX-joy.bx,dy=t.clientY-joy.by;const d=Math.hypot(dx,dy);
+ if(d>R){dx*=R/d;dy*=R/d;}jK.style.transform=`translate(${dx}px,${dy}px)`;if(d<R*.25)return;
+ const a=Math.atan2(-dy,dx)*180/Math.PI;
+ if(Math.abs(a)<=32)n.right=1;else if(Math.abs(a)>=148)n.left=1;
+ else if(a>0){n.up=1;if(a<62)n.right=1;else if(a>118)n.left=1;}
+ else{n.down=1;if(a>-62)n.right=1;else if(a<-118)n.left=1;}}
 function onTouch(e){if(e.target.closest&&e.target.closest('#menu'))return;e.preventDefault();touchEl.classList.add('on');const n={};
- for(const t of e.touches){const el=document.elementFromPoint(t.clientX,t.clientY);const k=el&&el.dataset&&el.dataset.k;if(k)k.split(',').forEach(x=>n[x]=1);else n.tap=1;}
+ if(joy.id!==null&&![...e.touches].some(t=>t.identifier===joy.id)){joy.id=null;jB.style.display='none';jK.style.transform='';}
+ for(const t of e.touches){
+  if(t.identifier===joy.id){joyDirs(t,n);continue;}
+  const el0=document.elementFromPoint(t.clientX,t.clientY),onBtn=el0&&el0.dataset&&el0.dataset.k;
+  if(ctrlMode==='joy'&&joy.id===null&&!onBtn&&S.state==='play'&&t.clientX<innerWidth*.5){joy.id=t.identifier;joy.bx=t.clientX;joy.by=t.clientY;jB.style.display='block';jB.style.left=t.clientX+'px';jB.style.top=t.clientY+'px';jK.style.transform='';continue;}
+  const el=el0;const k=el&&el.dataset&&el.dataset.k;if(k)k.split(',').forEach(x=>n[x]=1);else n.tap=1;}
  for(const k in n)if(!tc[k])latch[k]=1;tc=n;document.querySelectorAll('#touch .b').forEach(b=>{b.classList.toggle('on',b.dataset.k.split(',').every(x=>n[x]))});}
 ['touchstart','touchmove','touchend','touchcancel'].forEach(ev=>document.addEventListener(ev,onTouch,{passive:false}));
 if(matchMedia('(pointer:coarse)').matches||('ontouchstart' in window))touchEl.classList.add('on');
@@ -165,7 +179,7 @@ function goFull(){try{if(matchMedia('(pointer:coarse)').matches&&!document.fulls
 function startNew(){goFull();sfx('pick');setMenu([]);newGame();}
 function startCont(){goFull();sfx('pick');setMenu([]);loadGame();}
 function titleMenu(){S.state='title';const items=[['NEW GAME',startNew]];if(getSave())items.unshift(['CONTINUE',startCont]);setMenu(items);}
-function pauseGame(){S.state='pause';setMenu([['RESUME',resume],['LAST CAMPFIRE',()=>{setMenu([]);loadGame();}],['TITLE',titleMenu]]);}
+function pauseGame(){S.state='pause';setMenu([['RESUME',resume],['CONTROLS: '+(ctrlMode==='joy'?'JOYSTICK':'D-PAD'),()=>{ctrlMode=ctrlMode==='joy'?'pad':'joy';try{localStorage.setItem('gruk_ctrl',ctrlMode);}catch(e){}applyCtrl();pauseGame();}],['LAST CAMPFIRE',()=>{setMenu([]);loadGame();}],['TITLE',titleMenu]]);}
 function resume(){setMenu([]);S.state='play';}
 
 // ---------------- effects
@@ -580,4 +594,4 @@ let last=performance.now(),acc=0;
 function frame(now){const el=Math.min(.1,(now-last)/1000);last=now;acc+=el;while(acc>=1/60){pollInput();update(1/60);acc-=1/60;}draw();requestAnimationFrame(frame);}
 function resize(){const w=innerWidth,h=innerHeight;let s=Math.min(w/VW,h/VH);const si=Math.floor(s);if(si>=2&&si/s>.88)s=si;cv.style.width=Math.floor(VW*s)+'px';cv.style.height=Math.floor(VH*s)+'px';}
 addEventListener('resize',resize);resize();titleMenu();requestAnimationFrame(frame);
-window.GRUK={S,get boss(){return boss},get banner(){return banner},set banner(v){banner=v},get P(){return P},get cur(){return cur},get ents(){return ents},kb,enterRoom,newGame,give:a=>{S.ab[a]=1},ROOMS};
+window.GRUK={S,get boss(){return boss},get banner(){return banner},set banner(v){banner=v},get P(){return P},get cur(){return cur},get ents(){return ents},kb,enterRoom,newGame,give:a=>{S.ab[a]=1},ROOMS,get ctrlMode(){return ctrlMode},I};
