@@ -430,50 +430,356 @@
    "E",
    "h",
    "o",
-   "T"
+   "T",
+   "X",
+   "U",
+   "R0",
+   "R1",
+   "R2",
+   "R3",
+   "R4",
+   "R5",
+   "R6",
+   "R7",
+   "R8",
+   "R9",
+   "R10",
+   "R11",
+   "R12",
+   "R13",
+   "R14",
+   "R15"
   ],
   "variants": 4,
   "size": 16
+ },
+ "props": {
+  "img": "props.png",
+  "frames": {
+   "bone": [
+    0,
+    0,
+    16,
+    16
+   ],
+   "skull": [
+    16,
+    0,
+    16,
+    16
+   ],
+   "mush": [
+    32,
+    0,
+    16,
+    16
+   ],
+   "glow": [
+    48,
+    0,
+    16,
+    16
+   ],
+   "crys": [
+    64,
+    0,
+    16,
+    16
+   ],
+   "fern": [
+    80,
+    0,
+    16,
+    16
+   ],
+   "flower": [
+    96,
+    0,
+    16,
+    16
+   ],
+   "pebble": [
+    112,
+    0,
+    16,
+    16
+   ],
+   "stal": [
+    128,
+    0,
+    16,
+    16
+   ],
+   "vine": [
+    144,
+    0,
+    16,
+    16
+   ],
+   "icicle": [
+    160,
+    0,
+    16,
+    16
+   ],
+   "paint0": [
+    176,
+    0,
+    16,
+    16
+   ],
+   "paint1": [
+    192,
+    0,
+    16,
+    16
+   ],
+   "ember": [
+    208,
+    0,
+    16,
+    16
+   ]
+  }
+ },
+ "bosses": {
+  "img": "bosses.png",
+  "frames": {
+   "croc_walk0": [
+    0,
+    0,
+    128,
+    44
+   ],
+   "croc_walk1": [
+    0,
+    44,
+    128,
+    44
+   ],
+   "croc_walk2": [
+    0,
+    88,
+    128,
+    44
+   ],
+   "croc_walk3": [
+    0,
+    132,
+    128,
+    44
+   ],
+   "croc_prep0": [
+    0,
+    176,
+    128,
+    44
+   ],
+   "croc_prep1": [
+    0,
+    220,
+    128,
+    44
+   ],
+   "croc_lunge0": [
+    0,
+    264,
+    128,
+    44
+   ],
+   "croc_tail0": [
+    0,
+    308,
+    128,
+    44
+   ],
+   "croc_tail1": [
+    0,
+    352,
+    128,
+    44
+   ],
+   "mammoth_walk0": [
+    0,
+    396,
+    112,
+    52
+   ],
+   "mammoth_walk1": [
+    0,
+    448,
+    112,
+    52
+   ],
+   "mammoth_walk2": [
+    0,
+    500,
+    112,
+    52
+   ],
+   "mammoth_walk3": [
+    0,
+    552,
+    112,
+    52
+   ],
+   "mammoth_prep0": [
+    0,
+    604,
+    112,
+    52
+   ],
+   "mammoth_prep1": [
+    0,
+    656,
+    112,
+    52
+   ],
+   "mammoth_charge0": [
+    0,
+    708,
+    112,
+    52
+   ],
+   "mammoth_charge1": [
+    0,
+    760,
+    112,
+    52
+   ],
+   "mammoth_stun0": [
+    0,
+    812,
+    112,
+    52
+   ],
+   "golem_idle0": [
+    0,
+    864,
+    128,
+    60
+   ],
+   "golem_idle1": [
+    0,
+    924,
+    128,
+    60
+   ],
+   "golem_throw0": [
+    0,
+    984,
+    128,
+    60
+   ],
+   "golem_throw1": [
+    0,
+    1044,
+    128,
+    60
+   ],
+   "golem_erupt0": [
+    0,
+    1104,
+    128,
+    60
+   ],
+   "golem_erupt1": [
+    0,
+    1164,
+    128,
+    60
+   ],
+   "ptero_fly0": [
+    0,
+    1224,
+    104,
+    44
+   ],
+   "ptero_fly1": [
+    0,
+    1268,
+    104,
+    44
+   ],
+   "ptero_fly2": [
+    0,
+    1312,
+    104,
+    44
+   ],
+   "ptero_fly3": [
+    0,
+    1356,
+    104,
+    44
+   ],
+   "ptero_prep0": [
+    0,
+    1400,
+    104,
+    44
+   ],
+   "ptero_prep1": [
+    0,
+    1444,
+    104,
+    44
+   ],
+   "ptero_swoop0": [
+    0,
+    1488,
+    104,
+    44
+   ]
+  }
  },
  "bg": {
   "base": {
    "sk": "bg_base_sk.png",
    "far": "bg_base_far.png",
+   "mid": "bg_base_mid.png",
    "near": "bg_base_near.png"
   },
   "cliff": {
    "sk": "bg_cliff_sk.png",
    "far": "bg_cliff_far.png",
+   "mid": "bg_cliff_mid.png",
    "near": "bg_cliff_near.png"
   },
   "cave": {
    "sk": "bg_cave_sk.png",
    "far": "bg_cave_far.png",
+   "mid": "bg_cave_mid.png",
    "near": "bg_cave_near.png"
   },
   "ice": {
    "sk": "bg_ice_sk.png",
    "far": "bg_ice_far.png",
+   "mid": "bg_ice_mid.png",
    "near": "bg_ice_near.png"
   },
   "jungle": {
    "sk": "bg_jungle_sk.png",
    "far": "bg_jungle_far.png",
+   "mid": "bg_jungle_mid.png",
    "near": "bg_jungle_near.png"
   },
   "icecave": {
    "sk": "bg_icecave_sk.png",
    "far": "bg_icecave_far.png",
+   "mid": "bg_icecave_mid.png",
    "near": "bg_icecave_near.png"
   },
   "lava": {
    "sk": "bg_lava_sk.png",
    "far": "bg_lava_far.png",
+   "mid": "bg_lava_mid.png",
    "near": "bg_lava_near.png"
   },
   "peak": {
    "sk": "bg_peak_sk.png",
    "far": "bg_peak_far.png",
+   "mid": "bg_peak_mid.png",
    "near": "bg_peak_near.png"
   }
  }
