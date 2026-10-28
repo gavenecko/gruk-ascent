@@ -1,0 +1,480 @@
+{
+ "note": "GRUK art atlases. Replace any PNG (same layout) to reskin. Frames are [x,y,w,h]; anims are named frame lists with fps.",
+ "gruk": {
+  "img": "gruk.png",
+  "frames": {
+   "idle0": [
+    0,
+    0,
+    16,
+    24
+   ],
+   "idle1": [
+    16,
+    0,
+    16,
+    24
+   ],
+   "run0": [
+    32,
+    0,
+    16,
+    24
+   ],
+   "run1": [
+    48,
+    0,
+    16,
+    24
+   ],
+   "run2": [
+    64,
+    0,
+    16,
+    24
+   ],
+   "run3": [
+    80,
+    0,
+    16,
+    24
+   ],
+   "run4": [
+    96,
+    0,
+    16,
+    24
+   ],
+   "run5": [
+    112,
+    0,
+    16,
+    24
+   ],
+   "jump0": [
+    128,
+    0,
+    16,
+    24
+   ],
+   "fall0": [
+    144,
+    0,
+    16,
+    24
+   ],
+   "climb0": [
+    160,
+    0,
+    16,
+    24
+   ],
+   "climb1": [
+    176,
+    0,
+    16,
+    24
+   ],
+   "club0": [
+    192,
+    0,
+    16,
+    24
+   ],
+   "club1": [
+    208,
+    0,
+    16,
+    24
+   ],
+   "club2": [
+    224,
+    0,
+    16,
+    24
+   ],
+   "throw0": [
+    240,
+    0,
+    16,
+    24
+   ],
+   "throw1": [
+    256,
+    0,
+    16,
+    24
+   ],
+   "hang0": [
+    272,
+    0,
+    16,
+    24
+   ],
+   "hang1": [
+    288,
+    0,
+    16,
+    24
+   ],
+   "hurt0": [
+    304,
+    0,
+    16,
+    24
+   ],
+   "roll0": [
+    320,
+    0,
+    16,
+    24
+   ],
+   "roll1": [
+    336,
+    0,
+    16,
+    24
+   ],
+   "roll2": [
+    352,
+    0,
+    16,
+    24
+   ],
+   "roll3": [
+    368,
+    0,
+    16,
+    24
+   ],
+   "eidle0": [
+    384,
+    0,
+    16,
+    24
+   ],
+   "eidle1": [
+    400,
+    0,
+    16,
+    24
+   ],
+   "erun0": [
+    416,
+    0,
+    16,
+    24
+   ],
+   "erun1": [
+    432,
+    0,
+    16,
+    24
+   ],
+   "erun2": [
+    448,
+    0,
+    16,
+    24
+   ],
+   "erun3": [
+    464,
+    0,
+    16,
+    24
+   ],
+   "erun4": [
+    480,
+    0,
+    16,
+    24
+   ],
+   "erun5": [
+    496,
+    0,
+    16,
+    24
+   ]
+  },
+  "anims": {
+   "idle": {
+    "frames": [
+     "idle0",
+     "idle1"
+    ],
+    "fps": 2,
+    "loop": true
+   },
+   "run": {
+    "frames": [
+     "run0",
+     "run1",
+     "run2",
+     "run3",
+     "run4",
+     "run5"
+    ],
+    "fps": 12,
+    "loop": true
+   },
+   "jump": {
+    "frames": [
+     "jump0"
+    ],
+    "fps": 1,
+    "loop": true
+   },
+   "fall": {
+    "frames": [
+     "fall0"
+    ],
+    "fps": 1,
+    "loop": true
+   },
+   "climb": {
+    "frames": [
+     "climb0",
+     "climb1"
+    ],
+    "fps": 6,
+    "loop": true
+   },
+   "club": {
+    "frames": [
+     "club0",
+     "club1",
+     "club2"
+    ],
+    "fps": 18,
+    "loop": false
+   },
+   "throw": {
+    "frames": [
+     "throw0",
+     "throw1"
+    ],
+    "fps": 11,
+    "loop": false
+   },
+   "roll": {
+    "frames": [
+     "roll0",
+     "roll1",
+     "roll2",
+     "roll3"
+    ],
+    "fps": 16,
+    "loop": true
+   },
+   "hang": {
+    "frames": [
+     "hang0",
+     "hang1"
+    ],
+    "fps": 3,
+    "loop": true
+   },
+   "hurt": {
+    "frames": [
+     "hurt0"
+    ],
+    "fps": 1,
+    "loop": true
+   },
+   "eidle": {
+    "frames": [
+     "eidle0",
+     "eidle1"
+    ],
+    "fps": 2,
+    "loop": true
+   },
+   "erun": {
+    "frames": [
+     "erun0",
+     "erun1",
+     "erun2",
+     "erun3",
+     "erun4",
+     "erun5"
+    ],
+    "fps": 12,
+    "loop": true
+   }
+  }
+ },
+ "ents": {
+  "img": "entities.png",
+  "frames": {
+   "walker0": [
+    0,
+    0,
+    16,
+    16
+   ],
+   "walker1": [
+    16,
+    0,
+    16,
+    16
+   ],
+   "bat0": [
+    32,
+    0,
+    16,
+    16
+   ],
+   "bat1": [
+    48,
+    0,
+    16,
+    16
+   ],
+   "fish0": [
+    64,
+    0,
+    16,
+    16
+   ],
+   "fish1": [
+    80,
+    0,
+    16,
+    16
+   ],
+   "heart": [
+    96,
+    0,
+    16,
+    16
+   ],
+   "scroll": [
+    112,
+    0,
+    16,
+    16
+   ],
+   "meat": [
+    128,
+    0,
+    16,
+    16
+   ],
+   "sign": [
+    144,
+    0,
+    16,
+    16
+   ],
+   "spitter0": [
+    160,
+    0,
+    16,
+    16
+   ],
+   "spitter1": [
+    176,
+    0,
+    16,
+    16
+   ],
+   "hopper0": [
+    192,
+    0,
+    16,
+    16
+   ],
+   "hopper1": [
+    208,
+    0,
+    16,
+    16
+   ],
+   "icicle": [
+    224,
+    0,
+    16,
+    16
+   ],
+   "relic": [
+    240,
+    0,
+    16,
+    16
+   ]
+  }
+ },
+ "tiles": {
+  "img": "tiles.png",
+  "themes": [
+   "base",
+   "cliff",
+   "cave",
+   "ice",
+   "jungle",
+   "icecave",
+   "lava",
+   "peak"
+  ],
+  "chars": [
+   "#",
+   "C",
+   "V",
+   "D",
+   "G",
+   "S",
+   "s",
+   "B",
+   "=",
+   "^",
+   "E",
+   "h",
+   "o",
+   "T"
+  ],
+  "variants": 4,
+  "size": 16
+ },
+ "bg": {
+  "base": {
+   "sk": "bg_base_sk.png",
+   "far": "bg_base_far.png",
+   "near": "bg_base_near.png"
+  },
+  "cliff": {
+   "sk": "bg_cliff_sk.png",
+   "far": "bg_cliff_far.png",
+   "near": "bg_cliff_near.png"
+  },
+  "cave": {
+   "sk": "bg_cave_sk.png",
+   "far": "bg_cave_far.png",
+   "near": "bg_cave_near.png"
+  },
+  "ice": {
+   "sk": "bg_ice_sk.png",
+   "far": "bg_ice_far.png",
+   "near": "bg_ice_near.png"
+  },
+  "jungle": {
+   "sk": "bg_jungle_sk.png",
+   "far": "bg_jungle_far.png",
+   "near": "bg_jungle_near.png"
+  },
+  "icecave": {
+   "sk": "bg_icecave_sk.png",
+   "far": "bg_icecave_far.png",
+   "near": "bg_icecave_near.png"
+  },
+  "lava": {
+   "sk": "bg_lava_sk.png",
+   "far": "bg_lava_far.png",
+   "near": "bg_lava_near.png"
+  },
+  "peak": {
+   "sk": "bg_peak_sk.png",
+   "far": "bg_peak_far.png",
+   "near": "bg_peak_near.png"
+  }
+ }
+}
