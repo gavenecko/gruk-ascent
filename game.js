@@ -270,7 +270,7 @@ function moveY(o,dy,sf,oneway){const oldB=o.y+o.h;o.y+=dy;const c0=Math.floor(o.
 function touchWall(d){const tx=d<0?Math.floor((P.x-1)/TS):Math.floor((P.x+P.w)/TS);const r0=Math.floor((P.y+4)/TS),r1=Math.floor((P.y+P.h-4)/TS);
  for(let ty=r0;ty<=r1;ty++)if(solidP(tileAt(tx,ty)))return true;return false;}
 function hurt(n,fromX,hz){if((P.inv>0||(P.roll>0&&!hz))||S.state!=='play'||cut)return;hitstop=.06;if(S.ng&&!hz)n*=2;P.hp-=n;P.inv=1.1;sfx('hurt');shake=.2;P.cling=0;
- const d=(P.x+P.w/2)<fromX?-1:1;P.force=.16;P.forceVx=d*165;P.vy=hz?-150:-210;P.hook=null;puff(P.x+6,P.y+10,'#f44',8,80);
+ const d=(P.x+P.w/2)<fromX?-1:1;if(P.hook&&!hz&&P.hp>0){P.inv=1.4;}else{P.force=.16;P.forceVx=d*165;P.vy=hz?-150:-210;P.hook=null;}puff(P.x+6,P.y+10,'#f44',8,80);
  if(P.hp<=0){S.state='dead';stateT=0;S.deaths++;P.dx=P.x;P.dy=P.y;P.burst=0;sfx('death');hitstop=0;}}
 function canStand(){const y=P.y-10,c0=Math.floor(P.x/TS),c1=Math.floor((P.x+P.w-.001)/TS),r0=Math.floor(y/TS),r1=Math.floor((y+21.9)/TS);
  for(let ty=r0;ty<=r1;ty++)for(let tx=c0;tx<=c1;tx++)if(solidP(tileAt(tx,ty)))return false;return true;}
